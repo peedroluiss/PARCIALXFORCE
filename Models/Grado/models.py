@@ -7,3 +7,6 @@ class Grado(models.Model):
     Nombre = models.CharField(max_length=30)
     Descripcion = models.CharField(max_length=30)
     Catedratico = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.Nombre

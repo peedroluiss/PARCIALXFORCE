@@ -7,7 +7,8 @@ class Alumno(models.Model):
     Direccion = models.CharField(max_length=30)
     Tutelar = models.CharField(max_length=30)
     Telefono= models.IntegerField()
-    FechaNacimiento = models.DateField()
 
 
 
+    def __str__(self):
+        return '{} {}'.format(self.Nombre, self.Apellido)

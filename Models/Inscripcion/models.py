@@ -11,3 +11,6 @@ class Inscripcion(models.Model):
     grado_id_grado = models.ForeignKey(Grado, on_delete=models.CASCADE)
     seccion_id_seccion= models.ForeignKey(Seccion, on_delete=models.CASCADE)
     alumno_id_alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.id_ins
