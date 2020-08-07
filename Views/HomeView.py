@@ -8,4 +8,3 @@ class HomeView():
         plantilla = get_template('index.html')
         return HttpResponse(plantilla.render())
 
-

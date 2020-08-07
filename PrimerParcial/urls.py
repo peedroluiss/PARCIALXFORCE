@@ -20,6 +20,13 @@ from Views.HomeView import HomeView
 
 urlpatterns = [
    # path('admin/', admin.site.urls),
+     #URL DE INSCRIPCIONES
      path("Inscripcion",OperaForms.mostrarforms, name="mostrarforms"),
+     path("INGRESARINS",OperaForms.agregarforms, name="guardarforms"),
+     path("LISTAINSC", OperaForms.listaforms , name="listaforms"),
+     path("LISTAINSC/<id>", OperaForms.eliminarforms, name="eliminarforms"),
+     path("MODIFICAR/<id>", OperaForms.modificarforms, name="modificarforms"),
+
+
      path('', HomeView.home, name='home'),
 ]
