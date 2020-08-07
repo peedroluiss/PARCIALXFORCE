@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Models.Inscripcion.views import OperaForms
+from Views.HomeView import HomeView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+   # path('admin/', admin.site.urls),
+     path("Inscripcion",OperaForms.mostrarforms, name="mostrarforms"),
+     path('', HomeView.home, name='home'),
 ]
