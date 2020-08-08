@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpRequest
-from Models.Inscripcion.Forms import  FormsInscripcion, Inscripcion
+from django.http import HttpRequest, HttpResponse
+from django.template.loader import get_template
+
+from Models.Inscripcion.Forms import FormsInscripcion, Inscripcion
+from Models.Grado.FormsG import FormularioGrado
 
 class OperaForms(HttpRequest):
 
@@ -48,3 +51,5 @@ class OperaForms(HttpRequest):
                 data['mensaje'] = "Se ha actualizado el registro."
                 data['form'] = formulario
         return render(request, 'Modificaralumno.html', data)
+
+

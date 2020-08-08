@@ -15,18 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from Models.Inscripcion.views import OperaForms
+from Models.Grado.views import FormularioGradoViews
 from Views.HomeView import HomeView
+
 
 urlpatterns = [
    # path('admin/', admin.site.urls),
      #URL DE INSCRIPCIONES
      path("Inscripcion",OperaForms.mostrarforms, name="mostrarforms"),
      path("INGRESARINS",OperaForms.agregarforms, name="guardarforms"),
-     path("LISTAINSC", OperaForms.listaforms , name="listaforms"),
+     path("LISTAINSC", OperaForms.listaforms, name="listaforms"),
      path("LISTAINSC/<id>", OperaForms.eliminarforms, name="eliminarforms"),
      path("MODIFICAR/<id>", OperaForms.modificarforms, name="modificarforms"),
 
+     #URL DE GRADOS
+     path("registrarGrado/", FormularioGradoViews.indexg, name='registrarGrado'),
+     path("guardarGrado/", FormularioGradoViews.procesar_formulariog, name='guardarGrado'),
+     path("listarGrados/", FormularioGradoViews.listar_grados, name='listarGrados'),
+     path("listarGrados/<id>",FormularioGradoViews.eliminarG, name="ELIMINAR"),
+     path("editarGrados/<id>",FormularioGradoViews.modificarG, name="MODIFICARG"),
 
      path('', HomeView.home, name='home'),
 ]
