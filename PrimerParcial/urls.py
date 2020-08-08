@@ -19,7 +19,7 @@ from django.urls import path
 from Models.Inscripcion.views import OperaForms
 from Models.Grado.views import FormularioGradoViews
 from Views.HomeView import HomeView
-
+from Models.Alumno.views import FormularioAlumnoView
 
 urlpatterns = [
    # path('admin/', admin.site.urls),
@@ -36,6 +36,13 @@ urlpatterns = [
      path("listarGrados/", FormularioGradoViews.listar_grados, name='listarGrados'),
      path("listarGrados/<id>",FormularioGradoViews.eliminarG, name="ELIMINAR"),
      path("editarGrados/<id>",FormularioGradoViews.modificarG, name="MODIFICARG"),
+
+# URL DE ALUMNOS
+     path("registrarAlumno/", FormularioAlumnoView.index, name='registrarAlumno'),
+     path("guardarAlumno/", FormularioAlumnoView.procesar_formulario, name='guardarAlumno'),
+     path("listarAlumnos/", FormularioAlumnoView.listar_alumnos, name='listarAlumnos'),
+     path("listarAlumnos/<id>",FormularioAlumnoView.eliminarA, name="ELIMINAROBEJTO"),
+     path("editarAlumnos/<id>",FormularioAlumnoView.modificarA, name="MODIFICARLU"),
 
      path('', HomeView.home, name='home'),
 ]
