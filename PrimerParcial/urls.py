@@ -20,6 +20,7 @@ from Models.Inscripcion.views import OperaForms
 from Models.Grado.views import FormularioGradoViews
 from Views.HomeView import HomeView
 from Models.Alumno.views import FormularioAlumnoView
+from Models.Seccion.views import FormularioSeccionViews
 
 urlpatterns = [
    # path('admin/', admin.site.urls),
@@ -44,5 +45,11 @@ urlpatterns = [
      path("listarAlumnos/<id>",FormularioAlumnoView.eliminarA, name="ELIMINAROBEJTO"),
      path("editarAlumnos/<id>",FormularioAlumnoView.modificarA, name="MODIFICARLU"),
 
+#URL DE SECCION
+     path("registrarSeccion/", FormularioSeccionViews.indexs, name='registrarseccion'),
+     path("guardarSeccion/", FormularioSeccionViews.procesar_formularioss, name='guardarseccion'),
+     path("listaSeccion/", FormularioSeccionViews.listar_secciones, name='listarseccion'),
+     path("listarSeccion/<id>", FormularioSeccionViews.eliminarS, name="ELIMINAROSEC"),
+     path("editarSeccion/<id>",FormularioSeccionViews.modificarS, name="MODIFICARSE"),
      path('', HomeView.home, name='home'),
 ]
