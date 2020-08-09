@@ -8,13 +8,13 @@
         </div>
     {% endif %}
 
-    <h1 align="center">Registro de Grados</h1>
+    <h1 align="center">Registro de Secciones</h1>
     <form action="{% url 'guardarseccion' %}" method="POST">
         {% csrf_token %}
         {% if mensaje %}
 
             <div class="alert alert-success" role="alert">
-                Grado Registrado Exitosamente!!!
+                Seccion Registrada Exitosamente!!!
             </div>
         {% endif %}
 
@@ -23,7 +23,7 @@
 
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a class="btn btn-warning" href="">Cancelar</a>
-    <a class="btn btn-success col-md-1" href="">Grados</a>
+    <a class="btn btn-success col-md-1" href="">Secciones</a>
 
     </form>
 
